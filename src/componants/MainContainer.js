@@ -9,7 +9,7 @@ const MainContainer = () => {
           </Box>
           <Box display="flex" justifyContent="flex-end" mt={1}>
             <Box>
-              <Button variant="outlined">reset</Button>
+              <Button variant="outlined" color="secondary">reset</Button>
             </Box>
             <Box ml={0.2}>
               <Button variant="outlined" color="primary">estimate</Button>

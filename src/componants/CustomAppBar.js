@@ -19,7 +19,7 @@ const CustomAppBar = () => {
         <div className={classes.root}>
             <AppBar position="static" color="inherit" elevation={1}>
                 <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
+                    <Typography variant="h6" className={classes.title} color="secondary">
                         <b>Reading</b> speed
                     </Typography>
                     <IconButton edge="end">
