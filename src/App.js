@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, TextField, Box, Button } from '@material-ui/core';
+import CustomAppBar from './componants/CustomAppBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CustomAppBar />
+      <Container maxWidth="sm">
+        <Box mt={3}>
+          <TextField id="text" label="Text to analyse" variant="outlined" multiline fullWidth rows="15" size="small"/>
+        </Box>
+        <Box display="flex" justifyContent="flex-end" mt={1}>
+          <Box>
+            <Button variant="outlined">reset</Button>
+          </Box>
+          <Box ml={0.2}>
+            <Button variant="outlined" color="primary">estimate</Button>
+          </Box>
+        </Box>
+      </Container>
     </div>
   );
 }
