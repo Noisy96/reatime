@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SnackBar from '@material-ui/core/Snackbar';
 import Alert from '@material-ui/lab/Alert';
 
-const SuccessSnackBar = ({open}) => {
-
-    // TODO : Lift this state up
-    const [visibility, setVisibility] = useState(open);
+const SuccessSnackBar = ({open, closeFunction}) => {
 
     return (
-        <SnackBar open={visibility} autoHideDuration={6000} onClose={() => {setVisibility(false)}}>
+        <SnackBar open={open} autoHideDuration={6000} onClose={() => {closeFunction()}}>
             <Alert elevation={6} variant="filled" severity="success">Copied Successfully!</Alert>
         </SnackBar>
     );

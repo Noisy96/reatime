@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
 
-const ResultDialog = ({ open }) => {
+const ResultDialog = ({ open, closeFunction, result }) => {
     
     return (
         <Dialog open={open} aria-labelledby="result-dialog-title" aria-describedby="result-dialog-description">
@@ -10,12 +10,12 @@ const ResultDialog = ({ open }) => {
             </DialogTitle>
             <DialogContent>
                 <DialogContentText id="result-dialog-description" >
-                    2 min 45 seconds (213 word)
+                    {result.minutes} min {result.seconds} seconds ({result.wordsCount} word)
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button color="secondary" >exit</Button>
-                <Button color="primary" >copy</Button>
+                <Button color="secondary" onClick={() => {closeFunction(false)}} >exit</Button>
+                <Button color="primary" onClick={() => {closeFunction(true)}} >copy</Button>
             </DialogActions>
         </Dialog>
     );

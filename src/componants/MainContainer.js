@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, TextField, Box, Button } from '@material-ui/core';
 
-const MainContainer = () => {
+const MainContainer = ({ openFunction }) => {
 
   const [text, setText] = useState('');
 
@@ -24,7 +24,7 @@ const MainContainer = () => {
             <Button onClick={resetButtonFunction} variant="outlined" color="secondary">reset</Button>
           </Box>
           <Box ml={0.5}>
-            <Button onClick={() => {EstimateReadingTime(text)}} variant="outlined" color="primary">estimate</Button>
+            <Button onClick={() => {openFunction(EstimateReadingTime(text))}} variant="outlined" color="primary">estimate</Button>
           </Box>
         </Box>
       </Container>
@@ -32,9 +32,12 @@ const MainContainer = () => {
 }
 
 const EstimateReadingTime = (text) => {
+
+  if(text==='') return {minutes: 0, seconds: 0, wordsCount: 0};
+
   const wordsPerMinutes = 200;
-  const numberOfWords = text.split(' ').length;
-  const rate = numberOfWords / wordsPerMinutes;
+  const wordsCount = text.split(' ').length;
+  const rate = wordsCount / wordsPerMinutes;
 
   let minutes = Math.floor(rate);
   let seconds = (rate - minutes).toPrecision(2) * 100;
@@ -44,11 +47,10 @@ const EstimateReadingTime = (text) => {
   }
   seconds = Math.ceil(seconds);
 
-  console.log('minutes : '+minutes+"\nseconds : "+seconds);
-
   return {
     minutes: minutes,
-    seconds: seconds
+    seconds: seconds,
+    wordsCount: wordsCount
   };
 };
 
