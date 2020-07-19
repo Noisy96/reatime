@@ -20,7 +20,8 @@ const CustomAppBar = () => {
             <AppBar position="static" color="inherit" elevation={1}>
                 <Toolbar>
                     <Typography variant="h6" className={classes.title} color="secondary">
-                        <b>Reading</b> speed
+                        {/* TODO: Make "time" thiner */}
+                        <b>Rea</b>time
                     </Typography>
                     <IconButton edge="end">
                         <HelpOutline />

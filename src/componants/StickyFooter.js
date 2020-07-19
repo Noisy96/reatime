@@ -2,10 +2,9 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 
 const myFooterStyle = {
-    position: "fixed",
-    bottom: "0",
-    left: "2.5%",
     width: "95%",
+    margin: "auto",
+    marginTop: "37vh",
     borderTop: "0.2px solid lightgray",
 };
 
