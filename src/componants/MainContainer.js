@@ -13,7 +13,6 @@ const MainContainer = ({ openFunction }) => {
     setText('');
   };
 
-  
   return (
     <Container maxWidth="sm">
         <Box mt={3}>
@@ -29,29 +28,32 @@ const MainContainer = ({ openFunction }) => {
         </Box>
       </Container>
   );
-}
+};
 
 const EstimateReadingTime = (text) => {
 
-  if(text==='') return {minutes: 0, seconds: 0, wordsCount: 0};
-
-  const wordsPerMinutes = 200;
-  const wordsCount = text.split(' ').length;
-  const rate = wordsCount / wordsPerMinutes;
-
-  let minutes = Math.floor(rate);
-  let seconds = (rate - minutes).toPrecision(2) * 100;
-  if(seconds >= 60) {
-    seconds = seconds % 60;
-    minutes += 1;
+  if(text==='') {
+    return {minutes: 0, seconds: 0, wordsCount: 0};
   }
-  seconds = Math.ceil(seconds);
-
-  return {
-    minutes: minutes,
-    seconds: seconds,
-    wordsCount: wordsCount
-  };
+  else {
+    const wordsPerMinutes = 200;
+    const wordsCount = text.split(' ').length;
+    const rate = wordsCount / wordsPerMinutes;
+  
+    let minutes = Math.floor(rate);
+    let seconds = (rate - minutes).toPrecision(2) * 100;
+    if(seconds >= 60) {
+      seconds = seconds % 60;
+      minutes += 1;
+    }
+    seconds = Math.ceil(seconds);
+  
+    return {
+      minutes: minutes,
+      seconds: seconds,
+      wordsCount: wordsCount
+    };
+  }
 };
 
 export default MainContainer;

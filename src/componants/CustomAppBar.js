@@ -21,7 +21,7 @@ const CustomAppBar = () => {
                 <Toolbar>
                     <Typography variant="h6" className={classes.title} color="secondary">
                         {/* TODO: Make "time" thiner */}
-                        <b>Rea</b>time
+                        <b>Rea</b>Time
                     </Typography>
                     <IconButton edge="end">
                         <HelpOutline />

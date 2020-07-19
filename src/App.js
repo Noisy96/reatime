@@ -50,7 +50,7 @@ function App() {
       <ResultDialog open={resultDialog} closeFunction={closeDialog} result={result}/>
 
       {/* Feedback snackbar for announcing the success of the copying */}
-      <SuccessSnackBar open={successSnackbar} openFunction={closeDialog} closeFunction={closeSnackbar} />
+      <SuccessSnackBar open={successSnackbar} closeFunction={closeSnackbar} />
       
     </ThemeProvider>
   );
