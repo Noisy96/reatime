@@ -1,7 +1,7 @@
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import { grey } from '@material-ui/core/colors';
 
-// Besides the secondary color (which I override ) we're using most the default theme
+// Besides the secondary color (which I override ) we're using the default theme
 
 const MainTheme = createMuiTheme({
     palette: {

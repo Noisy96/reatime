@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography, IconButton } from '@material-ui/core';
-import { MoreVert, HelpOutline } from '@material-ui/icons';
+import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { MoreVert } from '@material-ui/icons';
+
+// Dialogs
+import { AboutDialog, LicenseDialog, HelpDialog } from './CustomDialogs';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -13,7 +16,41 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CustomAppBar = () => {
+
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const [aboutDialog, setAboutDialog] = useState(false);
+    const [licenseDialog, setLicenseDialog] = useState(false);
+    const [helpDialog, setHelpDialog] = useState(false);
+
+    const handleOpenCloseDialogs = (id) => {
+        switch (id) {
+            case 'about':
+                setAboutDialog(!aboutDialog);
+                handleMenuClose();
+                break;
+            case 'license':
+                setLicenseDialog(!licenseDialog);
+                handleMenuClose();
+                break;
+            case 'help':
+               setHelpDialog(!helpDialog);
+               handleMenuClose();
+                break;
+            default:
+                throw new Error();
+        }
+    }
+
     const classes = useStyles();
+
+    const handleMenuOpen = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
 
     return (
         <div className={classes.root}>
@@ -21,16 +58,20 @@ const CustomAppBar = () => {
                 <Toolbar>
                     <Typography variant="h6" className={classes.title} color="secondary">
                         {/* TODO: Make "time" thiner */}
-                        <b>Rea</b>Time
+                        ReaTime
                     </Typography>
-                    <IconButton edge="end">
-                        <HelpOutline />
-                    </IconButton>
-                    <IconButton edge="end">
+                    <IconButton aria-controls="simple-menu" aria-haspopup="true" edge="end" onClick={handleMenuOpen}>
                         <MoreVert />
                     </IconButton>
+                    <Menu id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose} keepMounted>
+                        <MenuItem onClick={() => {handleOpenCloseDialogs('license')}}>License</MenuItem>
+                        <MenuItem onClick={() => {handleOpenCloseDialogs('about')}}>About</MenuItem>
+                    </Menu>
                 </Toolbar>
-            </AppBar>            
+            </AppBar>
+            <AboutDialog open={aboutDialog} closeFunction={handleOpenCloseDialogs} />
+            <LicenseDialog open={licenseDialog} closeFunction={handleOpenCloseDialogs} />
+            <HelpDialog open={helpDialog} closeFunction={handleOpenCloseDialogs} />
         </div>
     );
 };

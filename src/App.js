@@ -7,7 +7,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CustomAppBar from './componants/CustomAppBar';
 import MainContainer from './componants/MainContainer';
 import StickyFooter from './componants/StickyFooter';
-import ResultDialog from './componants/ResultDialog';
+import { ResultDialog } from './componants/CustomDialogs';
 import SuccessSnackBar from './componants/SuccessSnackBar';
 
 // Custom theme
