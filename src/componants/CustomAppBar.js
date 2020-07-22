@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Menu, MenuItem, Box } from '@material-ui/core';
 import { MoreVert } from '@material-ui/icons';
+import logo from '../logo.svg';
 
 // Dialogs
 import { AboutDialog, LicenseDialog, HelpDialog } from './CustomDialogs';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    title: {
-        flexGrow: 1,
-    },
-}));
 
 const CustomAppBar = () => {
 
@@ -42,8 +33,6 @@ const CustomAppBar = () => {
         }
     }
 
-    const classes = useStyles();
-
     const handleMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -53,13 +42,12 @@ const CustomAppBar = () => {
     };
 
     return (
-        <div className={classes.root}>
+        <div>
             <AppBar position="static" color="inherit" elevation={1}>
                 <Toolbar>
-                    <Typography variant="h6" className={classes.title} color="secondary">
-                        {/* TODO: Make "time" thiner */}
-                        ReaTime
-                    </Typography>
+                    <Box flexGrow={1} justifyContent="center" mt={1}>
+                        <img style={{maxWidth: "35vw"}} src={logo} alt="Reading meter logo" />
+                    </Box>
                     <IconButton aria-controls="simple-menu" aria-haspopup="true" edge="end" onClick={handleMenuOpen}>
                         <MoreVert />
                     </IconButton>

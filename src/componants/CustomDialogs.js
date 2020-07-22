@@ -32,7 +32,7 @@ export const AboutDialog = ({ open, closeFunction }) => {
             </DialogTitle>
             <DialogContent>
                 <DialogContentText align="justify">
-                    <b>Rea</b>Time is a minimalist single purpose webapp, that estimates the time necessary to read a given text.
+                    <b>Reading</b> Meter is a minimalist single purpose webapp, that estimates the time necessary to read a given text.
                 </DialogContentText>
                 <DialogActions>
                     <Button color="primary" onClick={() => {closeFunction('about')}}>
