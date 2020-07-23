@@ -1,17 +1,16 @@
-<center><img src="images/cover.jpg" width="500px"></center>
+<p align="center"><img src="images/cover.jpg" width="500px"> </p>
 
-<center>
-
-![](https://img.shields.io/github/package-json/v/noisy96/reatime?style=flat-square)
-[![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Build Status](https://travis-ci.com/Noisy96/reatime.svg?branch=master)](https://travis-ci.com/Noisy96/reatime)
-
-</center>
+<p align="center">
+<img alt="Version number badge" src="https://img.shields.io/github/package-json/v/noisy96/reatime?style=flat-square" />
+<a href="https://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPLv3" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a>
+<a href="https://travis-ci.com/Noisy96/reatime"><img alt="Build Status" src="https://travis-ci.com/Noisy96/reatime.svg?branch=master" /></a>
+</p>
 
 # Reading Meter [🔗](www.noisy96.github.io/reatime)
 
 ## Problem
 Some platforms don't offer automated estimated time (not you [medium](www.medium.com)), you can say _but these platforms such as Facebook aren't adapted for articles_, fair enough. But they still have long posters.
+
 
 <img src="images/logo-readme.png" width="100px" align="right" style="margin: 10px">
 
