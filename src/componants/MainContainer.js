@@ -32,12 +32,12 @@ const MainContainer = ({ openFunction }) => {
 
 const EstimateReadingTime = (text) => {
 
-  if(text==='') {
+  if(text==='' || !text.match(/[\w\d]/)) {
     return {minutes: 0, seconds: 0, wordsCount: 0};
   }
   else {
     const wordsPerMinutes = 200;
-    const wordsCount = text.split(' ').length;
+    const wordsCount = text.split(/[ \n]+[^ \n]/g).length;
     const rate = wordsCount / wordsPerMinutes;
   
     let minutes = Math.floor(rate);

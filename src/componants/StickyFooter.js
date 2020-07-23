@@ -20,7 +20,7 @@ const StickyFooter = () => {
         <div style={myFooterStyle}>
             <Box display="flex" justifyContent="flex-end">
                 <a href="https://www.twitter.com/noisy_96" target="_blank" rel="noopener noreferrer" style={myFooterLinksStyle}><p>Twitter</p></a>
-                <a href="https://www.github.com/noisy96" target="_blank" rel="noopener noreferrer" style={myFooterLinksStyle}><p>Github</p></a>
+                <a href="https://www.github.com/noisy96/reatime" target="_blank" rel="noopener noreferrer" style={myFooterLinksStyle}><p>Github</p></a>
             </Box>
         </div>
     );
