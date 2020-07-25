@@ -4,7 +4,7 @@ import { Button, Dialog, DialogActions, DialogContent, DialogContentText, Dialog
 
 export const ResultDialog = ({ open, closeFunction, result }) => {
 
-    const resultText = result.minutes + ' min ' + result.seconds + ' sec (' + result.wordsCount + ' word)';
+    const resultText = (result.minutes > 0 ? result.minutes + ' min ' : '') + result.seconds + ' sec (' + result.wordsCount + ' word)';
     
     return (
         <Dialog open={open} aria-labelledby="result-dialog-title" aria-describedby="result-dialog-description" onClose={closeFunction}>
