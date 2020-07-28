@@ -1,7 +1,7 @@
 <p align="center"><img src="images/cover.jpg" width="500px"> </p>
 
 <p align="center">
-<img alt="Version number badge" src="https://img.shields.io/github/package-json/v/noisy96/reatime?style=flat-square" />
+<img alt="Version number badge" src="https://img.shields.io/github/package-json/v/noisy96/reatime?style=square" />
 <a href="https://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPLv3" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a>
 <a href="https://travis-ci.com/Noisy96/reatime"><img alt="Build Status" src="https://travis-ci.com/Noisy96/reatime.svg?branch=master" /></a>
 </p>
