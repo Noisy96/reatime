@@ -9,7 +9,7 @@
 # Reading Meter [🔗](https://noisy96.github.io/reatime)
 
 ## Problem
-Some platforms don't offer automated estimated time (not you [medium](https://www.medium.com)), you can say _but these platforms such as Facebook aren't adapted for articles_, fair enough. But they still have long posters.
+Some platforms don't offer built-in estimated time (not you [medium](https://www.medium.com)), you can say _but these platforms such as Facebook aren't adapted for articles_, fair enough. But they still have long posters.
 
 
 <img src="images/logo-readme.png" width="100px" align="right" style="margin: 10px">
@@ -30,7 +30,7 @@ So no need to say, but that's where the inspiration came from.
 - Average reading speed chosen: __200 wpm__ <br><br> ![Average reading time per grade](images/average-wpm.jpg) [1]
 
 ## Future enhancements
-- Maybe giving the user more freedom to choose the average reading without spoiling the minimalistic design would be cool.
+- Maybe giving the user more freedom to choose the average reading speed without spoiling the minimalistic design would be cool.
 
 ## References
 - [1] [Average Words Per Minute](https://infinitemind.io/speed-reading/average-words-per-minute/)
