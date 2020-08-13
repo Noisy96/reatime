@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, TextField, Box, Button } from '@material-ui/core';
+import { Container, TextField, Box, Button, Slider, Typography } from '@material-ui/core';
 
 const MainContainer = ({ openFunction }) => {
 
@@ -13,10 +13,43 @@ const MainContainer = ({ openFunction }) => {
     setText('');
   };
 
+  const marks = [
+    {
+      value: 150,
+      label: "150wpm",
+    },
+    {
+      value: 200,
+      label: "200wpm",
+    },
+    {
+      value: 250,
+      label: "250wpm",
+    },
+  ];
+
+  function valueText(value) {
+    return `${value}wpm`;
+  };
+
   return (
     <Container maxWidth="sm">
         <Box mt={3}>
           <TextField id="text" value={text} onChange={handleChange} label="Text to analyse" variant="outlined" multiline fullWidth rows="15" size="small"/>
+        </Box>
+        <Box style={{float: "left"}}>
+          <Typography id="discrete-slider-always" color={"secondary"}>
+            Reading speed
+          </Typography>
+          <Slider
+            defaultValue={200}
+            getAriaValueText={valueText}
+            aria-labelledby="discrete-slider-always"
+            step={50}
+            min={150}
+            max={250}
+            valueLabelDisplay="auto"
+          />
         </Box>
         <Box display="flex" justifyContent="flex-end" mt={0.5}>
           <Box>
